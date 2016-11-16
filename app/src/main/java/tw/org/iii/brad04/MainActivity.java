@@ -9,12 +9,17 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     private Button test1, test2;
+    private MainApp mainApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.v("brad","onCreate");
+
+        mainApp = (MainApp) getApplication();
+        Log.v("brad","onCreate:" + mainApp.a);
+        mainApp.a = 321;
 
         test1 = (Button)findViewById(R.id.test1);
         test2 = (Button)findViewById(R.id.test2);

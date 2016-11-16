@@ -58,9 +58,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void test1(View view){
-        Intent it = new Intent(this, Page2Activity.class);
-        startActivity(it);
-        Log.v("brad", "test1 return");
+        if (view == test1) {
+            Intent it = new Intent(this, Page2Activity.class);
+            startActivity(it);
+            Log.v("brad", "test1 return");
+        }else if (view == test2){
+            finish();
+        }
     }
 
 

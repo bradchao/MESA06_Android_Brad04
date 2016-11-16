@@ -67,6 +67,32 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void test3(View view){
+        Intent it = new Intent(this, Page32Activity.class);
+        it.putExtra("name", "Brad");
+        it.putExtra("level", 4);
+        it.putExtra("sound", true);
+        startActivity(it);
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        String key1 = data.getStringExtra("key1");
+        Log.v("brad", "onActivityResult:" + requestCode + ":" + resultCode + ":" + key1);
+
+
+
+    }
+
+    public void test4(View view){
+        Intent it = new Intent(this, Page32Activity.class);
+        it.putExtra("name", "Brad");
+        it.putExtra("level", 4);
+        it.putExtra("sound", true);
+        //startActivity(it);
+        startActivityForResult(it,123); // requestCode => 123
+    }
 
 }
